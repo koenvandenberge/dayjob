@@ -1,0 +1,10 @@
+Package: dayjob
+Type: Package
+Title: Utility functions for daily use.
+Version: 0.1.0
+Author: Koen Van den Berge
+Maintainer: Koen Van den Berge <koen.vdberge@gmail.com>
+Description: This package makes my life easier.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
