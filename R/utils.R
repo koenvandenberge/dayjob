@@ -1,8 +1,13 @@
 ### convert matrix element ID to row and column ID
 elementToRowCol <- function(element, nrows, ncols){
-  row <- ceiling(element/nrows)
-  col <- element-(nrows*(row-1))
-  return(c(row,col))
+  rowColMat <- matrix(NA, nrow=length(element), ncol=2)
+  colnames(rowColMat) <- c("row", "column")
+  for(ee in 1:length(element)){
+    col <- ceiling(element[ee]/nrows)
+    row <- element[ee]-(nrows*(col-1))
+    rowColMat[ee,] <- c(row,col)
+  }
+  return(rowColMat)
 }
 
 
