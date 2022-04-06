@@ -1,10 +1,12 @@
 Package: dayjob
 Type: Package
 Title: Utility functions for daily use.
-Version: 0.1.01
+Version: 0.1.02
 Author: Koen Van den Berge
 Maintainer: Koen Van den Berge <koen.vdberge@gmail.com>
 Description: This package makes my life easier.
-License: What license is it under?
+License: `use_mit_license()`
 Encoding: UTF-8
 LazyData: true
+Imports: 
+    gtools
