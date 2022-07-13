@@ -2,14 +2,14 @@ getCellPopulationCounts <- function(sce,
                                     patientVar,
                                     cellTypeVar,
                                     group){
-  # sce is a SCE object
+  # sce is a SCE object or data frame
   # patientVar is the variable in colData denoting patients
   # cellTypeVar is the variable in colData denoting cell types
   # group is the variable in colData denoting treatment covariate
 
-  df <- data.frame(patient=sce$PATIENT_ID,
-                   celltype=sce$CT_clean.label,
-                   group=sce$COHORT)
+  df <- data.frame(patient=colData(sce)[,patientVar],
+                   celltype=colData(sce)[,cellTypeVar],
+                   group=colData(sce)[,group])
   require(tidyverse)
   sumDf <- df %>%
     group_by(patient, celltype, group) %>%
