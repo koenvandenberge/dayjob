@@ -22,7 +22,7 @@ getCellPopulationCounts <- function(sce,
                      across()) # across() keeps other column names
 
   if(format == "long"){
-    return(sumDf)
+    return(sumDf %>% distinct())
   } else if(format == "wide"){
     ## transform to wide format
     popCounts <- pivot_wider(sumDf, names_from=celltype,
